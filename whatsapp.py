@@ -19,17 +19,17 @@ options.add_argument("user-data-dir=/private/var/folders/x_/srprhlnd1xd53k70t9vh
 driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com/")
 
-wait = WebDriverWait(driver, 600)
+time.sleep(1)
+wait = WebDriverWait(driver, 1200)
 
 # recipient of the message (group/individual)
-target = '"das me"'
+target = '"Bhai USA"'
 
 # message to ne sent
-string = "sit up straight"
+string = "Brushsh"
 
 x_arg = '//span[contains(@title,' + target + ')]'
-group_title = wait.until(EC.presence_of_element_located((
-By.XPATH, x_arg)))
+group_title = wait.until(EC.presence_of_element_located((By.XPATH, x_arg)))
 print (group_title)
 print ("Sending message")
 group_title.click()
