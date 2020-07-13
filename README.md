@@ -18,6 +18,7 @@ pip install schedule
 
 ### Using Schedule
 Run scheduler.py using python3 from the terminal.
+For more information on the Schedule library, visit [docs](https://schedule.readthedocs.io/en/stable/)
 
 ### Using CronTab
 Open the CronTab editor using 
