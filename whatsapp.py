@@ -19,23 +19,31 @@ options.add_argument("user-data-dir=/private/var/folders/x_/srprhlnd1xd53k70t9vh
 driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com/")
 
-time.sleep(1)
-wait = WebDriverWait(driver, 1200)
+#time.sleep(1)
+#wait = WebDriverWait(driver, 1200)
 
 # recipient of the message (group/individual)
-target = '"Bhai USA"'
+target = "Bhai USA"
 
-# message to ne sent
-string = "Brushsh"
+# message to be sent
+string = "brushsh"
 
-x_arg = '//span[contains(@title,' + target + ')]'
-group_title = wait.until(EC.presence_of_element_located((By.XPATH, x_arg)))
-print (group_title)
-print ("Sending message")
-group_title.click()
-message = driver.find_elements_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')[0]
+inp_xpath_search = "//input[@title='Search or start new chat']"
+wait = WebDriverWait(driver, 10)
+time.sleep(2)
+input_box_search = wait.until(EC.presence_of_element_located((By.XPATH, '//div[@class="_3FRCZ copyable-text selectable-text"]')))
+# input_box_search = WebDriverWait(driver,50).until(lambda driver: driver.find_element_by_xpath(inp_xpath_search))
+input_box_search.click()
+time.sleep(2)
+input_box_search.send_keys(target)
+time.sleep(2)
+selected_contact = driver.find_element_by_xpath("//span[@title='"+target+"']")
+selected_contact.click()
 
-message.send_keys(string)
-sendbutton = driver.find_elements_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button')[0]
-sendbutton.click()
+inp_xpath = '//div[@class="_3FRCZ copyable-text selectable-text"][@contenteditable="true"][@data-tab="1"]'
+input_box = driver.find_element_by_xpath(inp_xpath)
+time.sleep(2)
+input_box.send_keys(string + Keys.ENTER)
+time.sleep(2)
+
 driver.close()
