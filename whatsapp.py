@@ -10,11 +10,11 @@ import sys
 # from webdriver_manager.chrome import ChromeDriverManager
 # driver = webdriver.Chrome(ChromeDriverManager().install())
 
-driver = webdriver.Chrome(r'/path/to/chromedriver')
+driver = webdriver.Chrome(r'/Users/sheyril/Downloads/chromedriver')
 
 #to not log in every time script runs
 options = Options()
-options.add_argument("user-data-dir=/path/to/chrome_profile")
+options.add_argument("user-data-dir=/private/var/folders/x_/srprhlnd1xd53k70t9vh6dlw0000gn/T/.com.google.Chrome.Ao2MGJ/Default")
 driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com/")
 
@@ -22,10 +22,10 @@ driver.get("https://web.whatsapp.com/")
 #wait = WebDriverWait(driver, 1200)
 
 # recipient of the message (group/individual)
-target = "target"
+target = "das me"
 
 # message to be sent
-string = "message"
+string = "Brush!"
 
 inp_xpath_search = "//input[@title='Search or start new chat']"
 wait = WebDriverWait(driver, 10)
