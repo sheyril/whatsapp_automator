@@ -2,7 +2,7 @@
 This is a simple python script to automate sending WhatsApp messages. You can also schedule messages as per your needs using the scheduler script or if you're on a Unix-like system, you can make use of Cron.
 
 ## Installation
-1. First make sure you're running the script using python3
+1. First, make sure you're running the script using python3
 
 2. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Selenuim.
 ```bash
