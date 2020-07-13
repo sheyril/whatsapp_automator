@@ -16,7 +16,8 @@ pip install schedule
 ```
 ## Usage 
 
-### Using Scheduler 
+### Using Schedule
+Run scheduler.py using python3 from the terminal.
 
 ### Using CronTab
 Open the CronTab editor using 
@@ -32,3 +33,4 @@ Now add in the command to schedule the script. For example, if you want to run t
 ```
 30 12 * * * cd <path to directory containing script> && <path to python3> whatsapp.py >/tmp/stdout.log 2>/tmp/stderr.log
 ```
+For more information on how to set up cron jobs, check out [docs](https://man7.org/linux/man-pages/man5/crontab.5.html) or [opensource](https://opensource.com/article/17/11/how-use-cron-linux) 
